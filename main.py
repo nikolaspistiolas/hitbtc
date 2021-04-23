@@ -20,6 +20,8 @@ def update(data,old_data):
                 if float(i['size']) == 0:
                     if j == 0:
                         old_data['ask'] = old_data['ask'][1:]
+                    elif j == len(old_data['ask'])-1:
+                        old_data['ask'] = old_data['ask'][:-1]
                     else:
                         old_data['ask'] = old_data['ask'][:j] + old_data['ask'][j+1:]
                 else:
@@ -36,6 +38,8 @@ def update(data,old_data):
                 if float(i['size']) == 0:
                     if j == 0:
                         old_data['bid'] = old_data['bid'][1:]
+                    elif j == len(old_data['bid'])-1:
+                        old_data['bid'] = old_data['bid'][:-1]
                     else:
                         old_data['bid'] = old_data['bid'][:j] + old_data['bid'][j + 1:]
                 else:
